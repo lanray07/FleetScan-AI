@@ -1,0 +1,21 @@
+FleetScan AI helps logistics teams, delivery drivers, contractors, courier firms, truck operators, and field-service businesses complete faster vehicle checks and keep clearer fleet records.
+
+Run daily walkaround inspections, record pass/fail checklist results, add notes and photos, track visible defects, and generate PDF reports for your compliance files. Fleet managers can review urgent vehicles, open defects, failed checks, maintenance reminders, and driver-submitted inspection history from one dashboard.
+
+AI-assisted defect scanning can suggest possible visible issues from uploaded vehicle photos, including tyre damage, light damage, body damage, windscreen cracks, mirror damage, fluid leaks, dashboard warnings, load-security issues, trailer issues, and general wear. AI findings are suggestions only and must be reviewed before action.
+
+Key features:
+- Daily vehicle walkaround checks
+- Photo-based defect reporting
+- AI-assisted visible defect suggestions
+- Repair priority scoring
+- Roadworthy / not-roadworthy status tracking
+- Maintenance reminders for MOT, insurance, service, tyres, brakes, oil, and inspections
+- Fleet manager dashboard
+- PDF inspection report exports
+- Before and after repair photos
+- Offline-friendly local data storage
+- StoreKit subscriptions for Pro and Business workflows
+
+Important safety notes:
+FleetScan AI does not provide a legal roadworthiness certificate, MOT certification, mechanical certification, or legal advice. Drivers and operators remain responsible for vehicle safety. Unsafe vehicles should not be driven. Critical defects should be checked by qualified professionals immediately.

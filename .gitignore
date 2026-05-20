@@ -28,3 +28,11 @@ FleetScanReports/
 
 # Tooling
 .swiftpm/
+__pycache__/
+*.pyc
+
+# Generated Fastlane submission cache
+fastlane/screenshots/
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output/

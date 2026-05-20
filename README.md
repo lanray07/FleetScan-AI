@@ -31,6 +31,20 @@ xcodebuild \
 
 Push this repository to GitHub and open the Actions tab to run the workflow.
 
+## App Store Upload
+
+The manual workflow at `.github/workflows/appstore-upload.yml` can upload metadata, screenshots, the app icon, and a signed IPA to App Store Connect once these GitHub secrets/variables are configured:
+
+- `APP_STORE_CONNECT_API_KEY_ID`
+- `APP_STORE_CONNECT_ISSUER_ID`
+- `APP_STORE_CONNECT_API_KEY_P8`
+- `APPLE_TEAM_ID`
+- `APP_SUPPORT_URL`
+- `APP_MARKETING_URL`
+- `APP_PRIVACY_URL`
+
+The App Store Connect app record and bundle ID must already exist before uploading a build.
+
 ## App Store Submission
 
 Submission assets and form drafts are in `AppStoreSubmission/`. Privacy and terms drafts are in `Legal/`.
