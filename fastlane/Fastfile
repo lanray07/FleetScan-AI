@@ -114,13 +114,13 @@ def prepare_app_store_signing(api_key, team_id)
     keychain_path: keychain_path,
     keychain_password: keychain_password
   )
+  cert_id = Actions.lane_context[SharedValues::CERT_CERTIFICATE_ID]
 
   get_provisioning_profile(
     api_key: api_key,
     team_id: team_id,
     app_identifier: app_identifier,
-    development: false,
-    adhoc: false,
+    cert_id: cert_id,
     force: true,
     provisioning_name: "FleetScan AI App Store"
   )
