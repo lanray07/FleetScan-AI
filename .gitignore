@@ -1,0 +1,30 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+*.xcscmblueprint
+*.moved-aside
+*.xccheckout
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Swift Package Manager
+.build/
+Package.resolved
+
+# App archives and signing
+*.ipa
+*.xcarchive
+*.mobileprovision
+*.cer
+*.p12
+ExportOptions.plist
+
+# macOS
+.DS_Store
+
+# Local app data / generated reports
+FleetScanReports/
+
+# Tooling
+.swiftpm/

@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00000000000000000000001 /* FleetScanAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000001 /* FleetScanAIApp.swift */; };
+		B00000000000000000000002 /* AppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000002 /* AppShellView.swift */; };
+		B00000000000000000000003 /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000003 /* AppNavigation.swift */; };
+		B00000000000000000000004 /* FleetEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000004 /* FleetEnums.swift */; };
+		B00000000000000000000005 /* FleetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000005 /* FleetModels.swift */; };
+		B00000000000000000000006 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000006 /* AIService.swift */; };
+		B00000000000000000000007 /* SubscriptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000007 /* SubscriptionStore.swift */; };
+		B00000000000000000000008 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000008 /* NotificationService.swift */; };
+		B00000000000000000000009 /* PDFReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000009 /* PDFReportService.swift */; };
+		B00000000000000000000010 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000010 /* DashboardViewModel.swift */; };
+		B00000000000000000000011 /* InspectionWorkflowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000011 /* InspectionWorkflowViewModel.swift */; };
+		B00000000000000000000012 /* ReportsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000012 /* ReportsViewModel.swift */; };
+		B00000000000000000000013 /* FleetComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000013 /* FleetComponents.swift */; };
+		B00000000000000000000014 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000014 /* AppConstants.swift */; };
+		B00000000000000000000015 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000015 /* Formatters.swift */; };
+		B00000000000000000000016 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000016 /* ShareSheet.swift */; };
+		B00000000000000000000017 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000017 /* CameraPicker.swift */; };
+		B00000000000000000000018 /* ReportFileURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000018 /* ReportFileURL.swift */; };
+		B00000000000000000000019 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000019 /* OnboardingView.swift */; };
+		B00000000000000000000020 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000020 /* DashboardView.swift */; };
+		B00000000000000000000021 /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000021 /* VehicleListView.swift */; };
+		B00000000000000000000022 /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000022 /* VehicleDetailView.swift */; };
+		B00000000000000000000023 /* VehicleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000023 /* VehicleEditorView.swift */; };
+		B00000000000000000000024 /* InspectionWorkflowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000024 /* InspectionWorkflowView.swift */; };
+		B00000000000000000000025 /* ChecklistItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000025 /* ChecklistItemDetailView.swift */; };
+		B00000000000000000000026 /* DefectsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000026 /* DefectsListView.swift */; };
+		B00000000000000000000027 /* DefectManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000027 /* DefectManagementView.swift */; };
+		B00000000000000000000028 /* MaintenanceTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000028 /* MaintenanceTrackerView.swift */; };
+		B00000000000000000000029 /* FleetManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000029 /* FleetManagerView.swift */; };
+		B00000000000000000000030 /* ReportsCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000030 /* ReportsCenterView.swift */; };
+		B00000000000000000000031 /* ReportDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000031 /* ReportDetailView.swift */; };
+		B00000000000000000000032 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000032 /* PaywallView.swift */; };
+		B00000000000000000000033 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000033 /* SettingsView.swift */; };
+		R00000000000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000002 /* Assets.xcassets */; };
+		R00000000000000000000002 /* FleetScanAI.storekit in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000004 /* FleetScanAI.storekit */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A00000000000000000000001 /* FleetScanAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetScanAIApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000002 /* AppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShellView.swift; sourceTree = "<group>"; };
+		A00000000000000000000003 /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
+		A00000000000000000000004 /* FleetEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetEnums.swift; sourceTree = "<group>"; };
+		A00000000000000000000005 /* FleetModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetModels.swift; sourceTree = "<group>"; };
+		A00000000000000000000006 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		A00000000000000000000007 /* SubscriptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStore.swift; sourceTree = "<group>"; };
+		A00000000000000000000008 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A00000000000000000000009 /* PDFReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFReportService.swift; sourceTree = "<group>"; };
+		A00000000000000000000010 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000011 /* InspectionWorkflowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionWorkflowViewModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000012 /* ReportsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000013 /* FleetComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetComponents.swift; sourceTree = "<group>"; };
+		A00000000000000000000014 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		A00000000000000000000015 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		A00000000000000000000016 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		A00000000000000000000017 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		A00000000000000000000018 /* ReportFileURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFileURL.swift; sourceTree = "<group>"; };
+		A00000000000000000000019 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A00000000000000000000020 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A00000000000000000000021 /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
+		A00000000000000000000022 /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
+		A00000000000000000000023 /* VehicleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleEditorView.swift; sourceTree = "<group>"; };
+		A00000000000000000000024 /* InspectionWorkflowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionWorkflowView.swift; sourceTree = "<group>"; };
+		A00000000000000000000025 /* ChecklistItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItemDetailView.swift; sourceTree = "<group>"; };
+		A00000000000000000000026 /* DefectsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectsListView.swift; sourceTree = "<group>"; };
+		A00000000000000000000027 /* DefectManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectManagementView.swift; sourceTree = "<group>"; };
+		A00000000000000000000028 /* MaintenanceTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceTrackerView.swift; sourceTree = "<group>"; };
+		A00000000000000000000029 /* FleetManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FleetManagerView.swift; sourceTree = "<group>"; };
+		A00000000000000000000030 /* ReportsCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsCenterView.swift; sourceTree = "<group>"; };
+		A00000000000000000000031 /* ReportDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailView.swift; sourceTree = "<group>"; };
+		A00000000000000000000032 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		A00000000000000000000033 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C00000000000000000000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C00000000000000000000002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C00000000000000000000004 /* FleetScanAI.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = FleetScanAI.storekit; sourceTree = "<group>"; };
+		D00000000000000000000001 /* FleetScanAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FleetScanAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F00000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G00000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				G00000000000000000000003 /* FleetScanAI */,
+				G00000000000000000000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		G00000000000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D00000000000000000000001 /* FleetScanAI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000003 /* FleetScanAI */ = {
+			isa = PBXGroup;
+			children = (
+				G00000000000000000000004 /* App */,
+				G00000000000000000000005 /* Models */,
+				G00000000000000000000006 /* Services */,
+				G00000000000000000000007 /* ViewModels */,
+				G00000000000000000000008 /* Components */,
+				G00000000000000000000009 /* Utilities */,
+				G00000000000000000000010 /* Views */,
+				G00000000000000000000025 /* Resources */,
+			);
+			path = FleetScanAI;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000004 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000001 /* FleetScanAIApp.swift */,
+				A00000000000000000000002 /* AppShellView.swift */,
+				A00000000000000000000003 /* AppNavigation.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000004 /* FleetEnums.swift */,
+				A00000000000000000000005 /* FleetModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000006 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000006 /* AIService.swift */,
+				A00000000000000000000007 /* SubscriptionStore.swift */,
+				A00000000000000000000008 /* NotificationService.swift */,
+				A00000000000000000000009 /* PDFReportService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000007 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000010 /* DashboardViewModel.swift */,
+				A00000000000000000000011 /* InspectionWorkflowViewModel.swift */,
+				A00000000000000000000012 /* ReportsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000008 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000013 /* FleetComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000009 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000014 /* AppConstants.swift */,
+				A00000000000000000000015 /* Formatters.swift */,
+				A00000000000000000000016 /* ShareSheet.swift */,
+				A00000000000000000000017 /* CameraPicker.swift */,
+				A00000000000000000000018 /* ReportFileURL.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000010 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				G00000000000000000000011 /* Onboarding */,
+				G00000000000000000000012 /* Dashboard */,
+				G00000000000000000000013 /* Vehicles */,
+				G00000000000000000000014 /* Inspection */,
+				G00000000000000000000015 /* Defects */,
+				G00000000000000000000016 /* Maintenance */,
+				G00000000000000000000017 /* Fleet */,
+				G00000000000000000000018 /* Reports */,
+				G00000000000000000000019 /* Paywall */,
+				G00000000000000000000020 /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000011 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000019 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000012 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000020 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000013 /* Vehicles */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000021 /* VehicleListView.swift */,
+				A00000000000000000000022 /* VehicleDetailView.swift */,
+				A00000000000000000000023 /* VehicleEditorView.swift */,
+			);
+			path = Vehicles;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000014 /* Inspection */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000024 /* InspectionWorkflowView.swift */,
+				A00000000000000000000025 /* ChecklistItemDetailView.swift */,
+			);
+			path = Inspection;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000015 /* Defects */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000026 /* DefectsListView.swift */,
+				A00000000000000000000027 /* DefectManagementView.swift */,
+			);
+			path = Defects;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000016 /* Maintenance */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000028 /* MaintenanceTrackerView.swift */,
+			);
+			path = Maintenance;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000017 /* Fleet */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000029 /* FleetManagerView.swift */,
+			);
+			path = Fleet;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000018 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000030 /* ReportsCenterView.swift */,
+				A00000000000000000000031 /* ReportDetailView.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000019 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000032 /* PaywallView.swift */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000020 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000033 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000025 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C00000000000000000000001 /* Info.plist */,
+				C00000000000000000000002 /* Assets.xcassets */,
+				G00000000000000000000026 /* StoreKit */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		G00000000000000000000026 /* StoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				C00000000000000000000004 /* FleetScanAI.storekit */,
+			);
+			path = StoreKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		T00000000000000000000001 /* FleetScanAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = X00000000000000000000003 /* Build configuration list for PBXNativeTarget "FleetScanAI" */;
+			buildPhases = (
+				S00000000000000000000001 /* Sources */,
+				F00000000000000000000001 /* Frameworks */,
+				S00000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FleetScanAI;
+			productName = FleetScanAI;
+			productReference = D00000000000000000000001 /* FleetScanAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		P00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					T00000000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = X00000000000000000000001 /* Build configuration list for PBXProject "FleetScanAI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = G00000000000000000000001;
+			productRefGroup = G00000000000000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				T00000000000000000000001 /* FleetScanAI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		S00000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				R00000000000000000000001 /* Assets.xcassets in Resources */,
+				R00000000000000000000002 /* FleetScanAI.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		S00000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000001 /* FleetScanAIApp.swift in Sources */,
+				B00000000000000000000002 /* AppShellView.swift in Sources */,
+				B00000000000000000000003 /* AppNavigation.swift in Sources */,
+				B00000000000000000000004 /* FleetEnums.swift in Sources */,
+				B00000000000000000000005 /* FleetModels.swift in Sources */,
+				B00000000000000000000006 /* AIService.swift in Sources */,
+				B00000000000000000000007 /* SubscriptionStore.swift in Sources */,
+				B00000000000000000000008 /* NotificationService.swift in Sources */,
+				B00000000000000000000009 /* PDFReportService.swift in Sources */,
+				B00000000000000000000010 /* DashboardViewModel.swift in Sources */,
+				B00000000000000000000011 /* InspectionWorkflowViewModel.swift in Sources */,
+				B00000000000000000000012 /* ReportsViewModel.swift in Sources */,
+				B00000000000000000000013 /* FleetComponents.swift in Sources */,
+				B00000000000000000000014 /* AppConstants.swift in Sources */,
+				B00000000000000000000015 /* Formatters.swift in Sources */,
+				B00000000000000000000016 /* ShareSheet.swift in Sources */,
+				B00000000000000000000017 /* CameraPicker.swift in Sources */,
+				B00000000000000000000018 /* ReportFileURL.swift in Sources */,
+				B00000000000000000000019 /* OnboardingView.swift in Sources */,
+				B00000000000000000000020 /* DashboardView.swift in Sources */,
+				B00000000000000000000021 /* VehicleListView.swift in Sources */,
+				B00000000000000000000022 /* VehicleDetailView.swift in Sources */,
+				B00000000000000000000023 /* VehicleEditorView.swift in Sources */,
+				B00000000000000000000024 /* InspectionWorkflowView.swift in Sources */,
+				B00000000000000000000025 /* ChecklistItemDetailView.swift in Sources */,
+				B00000000000000000000026 /* DefectsListView.swift in Sources */,
+				B00000000000000000000027 /* DefectManagementView.swift in Sources */,
+				B00000000000000000000028 /* MaintenanceTrackerView.swift in Sources */,
+				B00000000000000000000029 /* FleetManagerView.swift in Sources */,
+				B00000000000000000000030 /* ReportsCenterView.swift in Sources */,
+				B00000000000000000000031 /* ReportDetailView.swift in Sources */,
+				B00000000000000000000032 /* PaywallView.swift in Sources */,
+				B00000000000000000000033 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		X00000000000000000000004 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		X00000000000000000000005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		X00000000000000000000006 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FleetScanAI/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleetscanai.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STOREKIT_CONFIGURATION_FILE = FleetScanAI/Resources/StoreKit/FleetScanAI.storekit;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		X00000000000000000000007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FleetScanAI/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fleetscanai.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STOREKIT_CONFIGURATION_FILE = FleetScanAI/Resources/StoreKit/FleetScanAI.storekit;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		X00000000000000000000001 /* Build configuration list for PBXProject "FleetScanAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				X00000000000000000000004 /* Debug */,
+				X00000000000000000000005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		X00000000000000000000003 /* Build configuration list for PBXNativeTarget "FleetScanAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				X00000000000000000000006 /* Debug */,
+				X00000000000000000000007 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = P00000000000000000000001 /* Project object */;
+}

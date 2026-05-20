@@ -1,0 +1,49 @@
+name: iOS Xcode Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - "codex/**"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build FleetScan AI
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode.app
+          xcodebuild -version
+
+      - name: Show schemes
+        run: |
+          xcodebuild -list -project FleetScanAI.xcodeproj
+
+      - name: Build for iOS Simulator
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project FleetScanAI.xcodeproj \
+            -scheme FleetScanAI \
+            -configuration Debug \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro Max,OS=latest' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcode-derived-data-logs
+          path: |
+            ~/Library/Developer/Xcode/DerivedData/**/Logs/Build/*.xcactivitylog
+          if-no-files-found: ignore
