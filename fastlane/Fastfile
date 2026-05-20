@@ -233,6 +233,7 @@ platform :ios do
       automatic_release: false,
       build_number: build_number,
       run_precheck_before_submit: true,
+      precheck_include_in_app_purchases: false,
       submission_information: {
         add_id_info_uses_idfa: false,
         export_compliance_uses_encryption: false,
