@@ -24,7 +24,7 @@ xcodebuild \
   -project FleetScanAI.xcodeproj \
   -scheme FleetScanAI \
   -configuration Debug \
-  -destination 'platform=iOS Simulator,name=iPhone 16 Pro Max,OS=latest' \
+  -destination 'generic/platform=iOS Simulator' \
   CODE_SIGNING_ALLOWED=NO \
   build
 ```
