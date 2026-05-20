@@ -331,9 +331,11 @@ def save_screenshots() -> None:
         ("05-reports", "Export PDF records", "Generate inspection PDFs with vehicle details, checklist results, defect photos, AI findings, notes, and disclaimers.", "reports"),
     ]
     iphone_dir = SUBMISSION / "Screenshots" / "en-GB" / "iPhone-6.9"
+    iphone_65_dir = SUBMISSION / "Screenshots" / "en-GB" / "iPhone-6.5"
     ipad_dir = SUBMISSION / "Screenshots" / "en-GB" / "iPad-13"
     for name, title, subtitle, screen in shots:
         screenshot(iphone_dir / f"{name}.png", (1320, 2868), title, subtitle, screen, ipad=False)
+        screenshot(iphone_65_dir / f"{name}.png", (1242, 2688), title, subtitle, screen, ipad=False)
         screenshot(ipad_dir / f"{name}.png", (2048, 2732), title, subtitle, screen, ipad=True)
 
     screenshot(

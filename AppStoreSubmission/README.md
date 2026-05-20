@@ -6,6 +6,7 @@ This folder contains the local assets and draft form answers for App Store Conne
 
 - `Assets/AppStoreIcon-1024.png`
 - `Screenshots/en-GB/iPhone-6.9/*.png`
+- `Screenshots/en-GB/iPhone-6.5/*.png`
 - `Screenshots/en-GB/iPad-13/*.png`
 - `InAppPurchase/subscription-review-screenshot.png`
 

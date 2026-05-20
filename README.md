@@ -43,6 +43,11 @@ The manual workflow at `.github/workflows/appstore-upload.yml` can upload metada
 - `APP_MARKETING_URL`
 - `APP_PRIVACY_URL`
 
+For this repository, the current public GitHub URLs are:
+
+- Support: `https://github.com/lanray07/FleetScan-AI/issues`
+- Marketing: `https://github.com/lanray07/FleetScan-AI`
+
 The App Store Connect app record and bundle ID must already exist before uploading a build.
 
 Optional App Review submission is guarded. To enable the `submit_for_review` workflow input, the Apple account holder must also set:

@@ -1,1 +1,1 @@
-https://YOUR_DOMAIN.com/fleetscan-ai
+https://github.com/lanray07/FleetScan-AI

@@ -58,9 +58,9 @@ Keywords:
 
 fleet,vehicle inspection,walkaround check,defect report,van check,truck check,courier,maintenance,MOT,PDF report
 
-Support URL: `https://YOUR_DOMAIN.com/support`
+Support URL: `https://github.com/lanray07/FleetScan-AI/issues`
 
-Marketing URL: `https://YOUR_DOMAIN.com/fleetscan-ai`
+Marketing URL: `https://github.com/lanray07/FleetScan-AI`
 
 Privacy Policy URL: `https://YOUR_DOMAIN.com/privacy`
 
