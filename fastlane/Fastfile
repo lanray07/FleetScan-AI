@@ -70,12 +70,23 @@ def ci_python
   python_path
 end
 
+def distribution_certificate_p12_path
+  base64_content = ENV["APPLE_DISTRIBUTION_CERTIFICATE_P12_BASE64"].to_s.strip
+  return nil if base64_content.empty?
+
+  p12_path = File.expand_path("../.ci-distribution-certificate.p12", __dir__)
+  File.binwrite(p12_path, Base64.strict_decode64(base64_content))
+  p12_path
+end
+
 def prepare_app_store_signing(api_key, team_id)
   keychain_password = ENV.fetch("CI_KEYCHAIN_PASSWORD", SecureRandom.hex(24))
+  keychain_name = "fleetscanai-build.keychain"
+  keychain_path = File.expand_path("~/Library/Keychains/#{keychain_name}-db")
 
   if ENV["CI"].to_s.downcase == "true"
     create_keychain(
-      name: "fleetscanai-build.keychain",
+      name: keychain_name,
       password: keychain_password,
       default_keychain: true,
       unlock: true,
@@ -84,11 +95,23 @@ def prepare_app_store_signing(api_key, team_id)
     )
   end
 
+  p12_path = distribution_certificate_p12_path
+  if p12_path
+    import_certificate(
+      certificate_path: p12_path,
+      certificate_password: required_env("APPLE_DISTRIBUTION_CERTIFICATE_PASSWORD"),
+      keychain_name: keychain_name,
+      keychain_password: keychain_password
+    )
+    FileUtils.rm_f(p12_path)
+  end
+
   get_certificates(
     api_key: api_key,
     team_id: team_id,
     development: false,
     generate_apple_certs: true,
+    keychain_path: keychain_path,
     keychain_password: keychain_password
   )
 

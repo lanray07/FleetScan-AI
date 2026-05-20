@@ -32,6 +32,14 @@ Fallback. The full private key content from the downloaded `AuthKey_XXXX.p8` fil
 
 Your Apple Developer Team ID.
 
+`APPLE_DISTRIBUTION_CERTIFICATE_P12_BASE64`
+
+Base64 encoded Apple Distribution `.p12` certificate exported with its private key.
+
+`APPLE_DISTRIBUTION_CERTIFICATE_PASSWORD`
+
+The password used when exporting the Apple Distribution `.p12`.
+
 `CONFIRM_SUBMIT_FOR_REVIEW`
 
 Set to `true` only when you want the GitHub workflow to submit the app version to App Review.
