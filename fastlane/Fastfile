@@ -1,5 +1,6 @@
 require "base64"
 require "fileutils"
+require "securerandom"
 require "shellwords"
 
 default_platform(:ios)
@@ -69,6 +70,43 @@ def ci_python
   python_path
 end
 
+def prepare_app_store_signing(api_key, team_id)
+  keychain_password = ENV.fetch("CI_KEYCHAIN_PASSWORD", SecureRandom.hex(24))
+
+  if ENV["CI"].to_s.downcase == "true"
+    create_keychain(
+      name: "fleetscanai-build.keychain",
+      password: keychain_password,
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      lock_when_sleeps: false
+    )
+  end
+
+  get_certificates(
+    api_key: api_key,
+    team_id: team_id,
+    development: false,
+    generate_apple_certs: true,
+    keychain_password: keychain_password
+  )
+
+  get_provisioning_profile(
+    api_key: api_key,
+    team_id: team_id,
+    app_identifier: app_identifier,
+    development: false,
+    adhoc: false,
+    force: true,
+    provisioning_name: "FleetScan AI App Store"
+  )
+
+  profile_name = Actions.lane_context[SharedValues::SIGH_NAME]
+  UI.user_error!("Unable to resolve App Store provisioning profile name.") if profile_name.to_s.strip.empty?
+  profile_name
+end
+
 platform :ios do
   before_all do
     python = Shellwords.escape(ci_python)
@@ -102,8 +140,11 @@ platform :ios do
   desc "Archive and export a signed App Store IPA"
   lane :build_appstore do
     team_id = required_env("APPLE_TEAM_ID")
+    api_key = asc_api_key
+    profile_name = prepare_app_store_signing(api_key, team_id)
     key_path = asc_key_path
     escaped_key_path = Shellwords.escape(key_path)
+    profile_arg = Shellwords.escape("PROVISIONING_PROFILE_SPECIFIER=#{profile_name}")
 
     build_app(
       project: "FleetScanAI.xcodeproj",
@@ -121,13 +162,18 @@ platform :ios do
         "DEVELOPMENT_TEAM=#{team_id}",
         "PRODUCT_BUNDLE_IDENTIFIER=#{app_identifier}",
         "CURRENT_PROJECT_VERSION=#{build_number}",
-        "CODE_SIGN_STYLE=Automatic"
+        "CODE_SIGN_STYLE=Manual",
+        "CODE_SIGN_IDENTITY=Apple\\ Distribution",
+        profile_arg
       ].join(" "),
       export_options: {
         method: "app-store",
-        signingStyle: "automatic",
+        signingStyle: "manual",
         signingCertificate: "Apple Distribution",
         teamID: team_id,
+        provisioningProfiles: {
+          app_identifier => profile_name
+        },
         manageAppVersionAndBuildNumber: false,
         uploadSymbols: true,
         stripSwiftSymbols: true
