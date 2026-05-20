@@ -51,11 +51,19 @@ def asc_api_key
   )
 end
 
+def ci_python
+  python_path = Gem.win_platform? ? File.join(".ci-venv", "Scripts", "python.exe") : File.join(".ci-venv", "bin", "python")
+  sh("python3 -m venv .ci-venv") unless File.exist?(python_path)
+  python_path
+end
+
 platform :ios do
   before_all do
-    sh("python3 -m pip install --user pillow")
-    sh("python3 Tools/create_appstore_assets.py")
-    sh("python3 Tools/prepare_fastlane_submission.py")
+    python = Shellwords.escape(ci_python)
+    sh("#{python} -m pip install --upgrade pip")
+    sh("#{python} -m pip install pillow")
+    sh("#{python} Tools/create_appstore_assets.py")
+    sh("#{python} Tools/prepare_fastlane_submission.py")
   end
 
   desc "Upload App Store metadata, screenshots, and app icon"

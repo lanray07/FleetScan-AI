@@ -28,6 +28,7 @@ FleetScanReports/
 
 # Tooling
 .swiftpm/
+.ci-venv/
 __pycache__/
 *.pyc
 
