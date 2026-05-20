@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>NSCameraUsageDescription</key>
 	<string>FleetScan AI uses the camera to capture vehicle inspection and repair evidence.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
