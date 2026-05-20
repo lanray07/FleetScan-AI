@@ -28,6 +28,26 @@ The full private key content from the downloaded `AuthKey_XXXX.p8` file. Paste t
 
 Your Apple Developer Team ID.
 
+`CONFIRM_SUBMIT_FOR_REVIEW`
+
+Set to `true` only when you want the GitHub workflow to submit the app version to App Review.
+
+`OWNER_CONFIRMED_PRIVACY`
+
+Set to `true` after confirming the App Privacy answers in App Store Connect.
+
+`OWNER_CONFIRMED_DSA`
+
+Set to `true` after confirming Digital Services Act trader details in App Store Connect.
+
+`OWNER_CONFIRMED_EXPORT`
+
+Set to `true` after confirming the app does not use non-exempt encryption. The app Info.plist contains `ITSAppUsesNonExemptEncryption = false`.
+
+`OWNER_CONFIRMED_CONTENT_RIGHTS`
+
+Set to `true` after confirming the app does not contain, show, or access third-party content.
+
 `APP_SUPPORT_URL`
 
 Live HTTPS support URL, for example `https://yourdomain.com/support`.
@@ -71,3 +91,21 @@ After adding secrets:
 5. Run
 
 The workflow uploads metadata/screenshots/icon, builds a signed IPA, and uploads it to App Store Connect/TestFlight.
+
+## Tag Trigger
+
+You can also trigger the same workflow from Git:
+
+```bash
+git tag appstore-upload-YYYYMMDD-HHMM
+git push origin appstore-upload-YYYYMMDD-HHMM
+```
+
+To upload and then submit for review, use:
+
+```bash
+git tag appstore-submit-YYYYMMDD-HHMM
+git push origin appstore-submit-YYYYMMDD-HHMM
+```
+
+The submit tag still requires the confirmation secrets above.
