@@ -21,6 +21,10 @@ def build_number
   ENV["GITHUB_RUN_NUMBER"] || Time.now.utc.strftime("%Y%m%d%H%M")
 end
 
+def bool_env(name)
+  ENV[name].to_s.downcase == "true"
+end
+
 def asc_key_path
   key_id = required_env("APP_STORE_CONNECT_API_KEY_ID")
   key_content = asc_key_content
@@ -114,6 +118,34 @@ platform :ios do
       app_identifier: app_identifier,
       ipa: "build/FleetScanAI.ipa",
       skip_waiting_for_build_processing: true
+    )
+  end
+
+  desc "Submit the prepared app version for App Review after the build is processed"
+  lane :submit_review do
+    UI.user_error!("Set CONFIRM_SUBMIT_FOR_REVIEW=true to submit for App Review.") unless bool_env("CONFIRM_SUBMIT_FOR_REVIEW")
+    UI.user_error!("Set OWNER_CONFIRMED_PRIVACY=true after confirming App Privacy answers.") unless bool_env("OWNER_CONFIRMED_PRIVACY")
+    UI.user_error!("Set OWNER_CONFIRMED_DSA=true after completing DSA trader status in App Store Connect.") unless bool_env("OWNER_CONFIRMED_DSA")
+    UI.user_error!("Set OWNER_CONFIRMED_EXPORT=true after confirming export compliance answers.") unless bool_env("OWNER_CONFIRMED_EXPORT")
+    UI.user_error!("Set OWNER_CONFIRMED_CONTENT_RIGHTS=true after confirming content rights.") unless bool_env("OWNER_CONFIRMED_CONTENT_RIGHTS")
+
+    deliver(
+      api_key: asc_api_key,
+      app_identifier: app_identifier,
+      app_version: app_version,
+      skip_binary_upload: true,
+      skip_metadata: true,
+      skip_screenshots: true,
+      submit_for_review: true,
+      automatic_release: false,
+      run_precheck_before_submit: true,
+      submission_information: {
+        add_id_info_uses_idfa: false,
+        export_compliance_uses_encryption: true,
+        export_compliance_encryption_updated: false,
+        export_compliance_is_exempt: true,
+        content_rights_contains_third_party_content: false
+      }
     )
   end
 

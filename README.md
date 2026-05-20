@@ -45,6 +45,16 @@ The manual workflow at `.github/workflows/appstore-upload.yml` can upload metada
 
 The App Store Connect app record and bundle ID must already exist before uploading a build.
 
+Optional App Review submission is guarded. To enable the `submit_for_review` workflow input, the Apple account holder must also set:
+
+- `CONFIRM_SUBMIT_FOR_REVIEW=true`
+- `OWNER_CONFIRMED_PRIVACY=true`
+- `OWNER_CONFIRMED_DSA=true`
+- `OWNER_CONFIRMED_EXPORT=true`
+- `OWNER_CONFIRMED_CONTENT_RIGHTS=true`
+
+The first release is configured for manual release after approval.
+
 ## App Store Submission
 
 Submission assets and form drafts are in `AppStoreSubmission/`. Privacy and terms drafts are in `Legal/`.

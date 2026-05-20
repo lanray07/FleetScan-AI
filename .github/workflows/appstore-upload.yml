@@ -11,6 +11,10 @@ on:
         description: "Build signed IPA and upload to App Store Connect/TestFlight"
         type: boolean
         default: true
+      submit_for_review:
+        description: "Submit for App Review after owner confirmations are set"
+        type: boolean
+        default: false
 
 jobs:
   appstore:
@@ -30,6 +34,11 @@ jobs:
       APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
       APP_STORE_CONNECT_API_KEY_P8: ${{ secrets.APP_STORE_CONNECT_API_KEY_P8 }}
       APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      CONFIRM_SUBMIT_FOR_REVIEW: ${{ secrets.CONFIRM_SUBMIT_FOR_REVIEW }}
+      OWNER_CONFIRMED_PRIVACY: ${{ secrets.OWNER_CONFIRMED_PRIVACY }}
+      OWNER_CONFIRMED_DSA: ${{ secrets.OWNER_CONFIRMED_DSA }}
+      OWNER_CONFIRMED_EXPORT: ${{ secrets.OWNER_CONFIRMED_EXPORT }}
+      OWNER_CONFIRMED_CONTENT_RIGHTS: ${{ secrets.OWNER_CONFIRMED_CONTENT_RIGHTS }}
 
     steps:
       - name: Checkout
@@ -68,6 +77,11 @@ jobs:
         if: ${{ inputs.upload_build }}
         run: |
           bundle exec fastlane ios upload_build
+
+      - name: Submit for App Review
+        if: ${{ inputs.submit_for_review }}
+        run: |
+          bundle exec fastlane ios submit_review
 
       - name: Upload IPA artifact
         if: ${{ always() && inputs.upload_build }}
