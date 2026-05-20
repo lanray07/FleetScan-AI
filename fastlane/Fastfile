@@ -184,6 +184,7 @@ platform :ios do
         "-authenticationKeyIssuerID #{required_env('APP_STORE_CONNECT_ISSUER_ID')}",
         "DEVELOPMENT_TEAM=#{team_id}",
         "PRODUCT_BUNDLE_IDENTIFIER=#{app_identifier}",
+        "MARKETING_VERSION=#{app_version}",
         "CURRENT_PROJECT_VERSION=#{build_number}",
         "CODE_SIGN_STYLE=Manual",
         "CODE_SIGN_IDENTITY=Apple\\ Distribution",
