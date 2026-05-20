@@ -6,7 +6,7 @@ default_platform(:ios)
 def required_env(name)
   value = ENV[name]
   UI.user_error!("Missing required environment variable: #{name}") if value.to_s.strip.empty?
-  value
+  value.to_s.strip
 end
 
 def app_identifier
