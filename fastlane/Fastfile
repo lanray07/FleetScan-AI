@@ -121,8 +121,7 @@ platform :ios do
         "DEVELOPMENT_TEAM=#{team_id}",
         "PRODUCT_BUNDLE_IDENTIFIER=#{app_identifier}",
         "CURRENT_PROJECT_VERSION=#{build_number}",
-        "CODE_SIGN_STYLE=Automatic",
-        "CODE_SIGN_IDENTITY=Apple\\ Distribution"
+        "CODE_SIGN_STYLE=Automatic"
       ].join(" "),
       export_options: {
         method: "app-store",
