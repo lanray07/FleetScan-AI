@@ -53,13 +53,23 @@ jobs:
 
       - name: Select Xcode
         run: |
-          XCODE_PATH="$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort | tail -n 1 || true)"
+          XCODE_PATH="/Applications/Xcode.app"
+          if [ ! -d "$XCODE_PATH" ]; then
+            XCODE_PATH="$(ls -d /Applications/Xcode_26*.app 2>/dev/null | grep -vi beta | sort | tail -n 1 || true)"
+          fi
           if [ -z "$XCODE_PATH" ]; then
-            XCODE_PATH="/Applications/Xcode.app"
+            echo "No Xcode 26 installation found"
+            exit 1
           fi
           sudo xcode-select -s "$XCODE_PATH"
           xcodebuild -version
-          xcrun --sdk iphoneos --show-sdk-version
+          SDK_VERSION="$(xcrun --sdk iphoneos --show-sdk-version)"
+          echo "Using iPhoneOS SDK $SDK_VERSION"
+          case "$SDK_VERSION" in
+            26.*|[3-9][0-9].*) ;;
+            *) echo "iPhoneOS SDK 26 or later is required for App Store upload" && exit 1 ;;
+          esac
+          echo "DEVELOPER_DIR=$XCODE_PATH/Contents/Developer" >> "$GITHUB_ENV"
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
