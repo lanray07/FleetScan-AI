@@ -26,10 +26,10 @@ jobs:
       APP_VERSION: ${{ vars.APP_VERSION || '1.0' }}
       APP_NAME: ${{ vars.APP_NAME || 'FleetScan AI' }}
       APP_SUBTITLE: ${{ vars.APP_SUBTITLE || 'AI vehicle checks for fleets' }}
-      APP_SUPPORT_URL: ${{ vars.APP_SUPPORT_URL || secrets.APP_SUPPORT_URL }}
-      APP_MARKETING_URL: ${{ vars.APP_MARKETING_URL || secrets.APP_MARKETING_URL }}
-      APP_PRIVACY_URL: ${{ vars.APP_PRIVACY_URL || secrets.APP_PRIVACY_URL }}
-      APP_COPYRIGHT: ${{ vars.APP_COPYRIGHT || secrets.APP_COPYRIGHT }}
+      APP_SUPPORT_URL: ${{ vars.APP_SUPPORT_URL || secrets.APP_SUPPORT_URL || 'https://github.com/lanray07/FleetScan-AI/issues' }}
+      APP_MARKETING_URL: ${{ vars.APP_MARKETING_URL || secrets.APP_MARKETING_URL || 'https://github.com/lanray07/FleetScan-AI' }}
+      APP_PRIVACY_URL: ${{ vars.APP_PRIVACY_URL || secrets.APP_PRIVACY_URL || 'https://github.com/lanray07/FleetScan-AI/blob/main/PRIVACY.md' }}
+      APP_COPYRIGHT: ${{ vars.APP_COPYRIGHT || secrets.APP_COPYRIGHT || '© 2026 Olanrewaju Bankole' }}
       APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
       APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
       APP_STORE_CONNECT_API_KEY_P8: ${{ secrets.APP_STORE_CONNECT_API_KEY_P8 }}
