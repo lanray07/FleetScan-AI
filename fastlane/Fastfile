@@ -120,11 +120,14 @@ platform :ios do
         "-authenticationKeyIssuerID #{required_env('APP_STORE_CONNECT_ISSUER_ID')}",
         "DEVELOPMENT_TEAM=#{team_id}",
         "PRODUCT_BUNDLE_IDENTIFIER=#{app_identifier}",
-        "CURRENT_PROJECT_VERSION=#{build_number}"
+        "CURRENT_PROJECT_VERSION=#{build_number}",
+        "CODE_SIGN_STYLE=Automatic",
+        "CODE_SIGN_IDENTITY=Apple\\ Distribution"
       ].join(" "),
       export_options: {
         method: "app-store",
         signingStyle: "automatic",
+        signingCertificate: "Apple Distribution",
         teamID: team_id,
         manageAppVersionAndBuildNumber: false,
         uploadSymbols: true,
