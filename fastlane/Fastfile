@@ -52,18 +52,21 @@ def asc_api_key
 end
 
 def ci_python
-  python_path = Gem.win_platform? ? File.join(".ci-venv", "Scripts", "python.exe") : File.join(".ci-venv", "bin", "python")
-  sh("python3 -m venv .ci-venv") unless File.exist?(python_path)
+  venv_root = File.expand_path("../.ci-venv", __dir__)
+  python_path = Gem.win_platform? ? File.join(venv_root, "Scripts", "python.exe") : File.join(venv_root, "bin", "python")
+  sh("python3 -m venv #{Shellwords.escape(venv_root)}") unless File.exist?(python_path)
   python_path
 end
 
 platform :ios do
   before_all do
     python = Shellwords.escape(ci_python)
+    asset_script = Shellwords.escape(File.expand_path("../Tools/create_appstore_assets.py", __dir__))
+    submission_script = Shellwords.escape(File.expand_path("../Tools/prepare_fastlane_submission.py", __dir__))
     sh("#{python} -m pip install --upgrade pip")
     sh("#{python} -m pip install pillow")
-    sh("#{python} Tools/create_appstore_assets.py")
-    sh("#{python} Tools/prepare_fastlane_submission.py")
+    sh("#{python} #{asset_script}")
+    sh("#{python} #{submission_script}")
   end
 
   desc "Upload App Store metadata, screenshots, and app icon"
