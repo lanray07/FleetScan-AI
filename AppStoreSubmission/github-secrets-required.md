@@ -14,9 +14,13 @@ The Key ID from App Store Connect API key settings.
 
 The Issuer ID from App Store Connect API access.
 
+`APP_STORE_CONNECT_API_KEY_P8_BASE64`
+
+Preferred. Base64 encode the downloaded `AuthKey_XXXX.p8` file and store the single-line result. This avoids multiline secret formatting issues in CI.
+
 `APP_STORE_CONNECT_API_KEY_P8`
 
-The full private key content from the downloaded `AuthKey_XXXX.p8` file. Paste the entire file including:
+Fallback. The full private key content from the downloaded `AuthKey_XXXX.p8` file. Paste the entire file including:
 
 ```text
 -----BEGIN PRIVATE KEY-----

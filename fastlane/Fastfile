@@ -1,3 +1,4 @@
+require "base64"
 require "fileutils"
 require "shellwords"
 
@@ -37,14 +38,25 @@ def asc_key_path
 end
 
 def asc_key_content
-  required_env("APP_STORE_CONNECT_API_KEY_P8").gsub("\\n", "\n")
+  base64_content = ENV["APP_STORE_CONNECT_API_KEY_P8_BASE64"].to_s.strip
+  return Base64.strict_decode64(base64_content).strip unless base64_content.empty?
+
+  required_env("APP_STORE_CONNECT_API_KEY_P8").gsub("\\n", "\n").strip
+end
+
+def asc_key_content_base64
+  base64_content = ENV["APP_STORE_CONNECT_API_KEY_P8_BASE64"].to_s.strip
+  return base64_content unless base64_content.empty?
+
+  Base64.strict_encode64(asc_key_content)
 end
 
 def asc_api_key
   app_store_connect_api_key(
     key_id: required_env("APP_STORE_CONNECT_API_KEY_ID"),
     issuer_id: required_env("APP_STORE_CONNECT_ISSUER_ID"),
-    key_filepath: asc_key_path,
+    key_content: asc_key_content_base64,
+    is_key_content_base64: true,
     duration: 1200,
     in_house: false
   )

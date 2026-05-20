@@ -37,6 +37,7 @@ jobs:
       APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
       APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
       APP_STORE_CONNECT_API_KEY_P8: ${{ secrets.APP_STORE_CONNECT_API_KEY_P8 }}
+      APP_STORE_CONNECT_API_KEY_P8_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_P8_BASE64 }}
       APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
       CONFIRM_SUBMIT_FOR_REVIEW: ${{ secrets.CONFIRM_SUBMIT_FOR_REVIEW }}
       OWNER_CONFIRMED_PRIVACY: ${{ secrets.OWNER_CONFIRMED_PRIVACY }}
@@ -63,7 +64,7 @@ jobs:
         run: |
           test -n "$APP_STORE_CONNECT_API_KEY_ID" || (echo "Missing APP_STORE_CONNECT_API_KEY_ID" && exit 1)
           test -n "$APP_STORE_CONNECT_ISSUER_ID" || (echo "Missing APP_STORE_CONNECT_ISSUER_ID" && exit 1)
-          test -n "$APP_STORE_CONNECT_API_KEY_P8" || (echo "Missing APP_STORE_CONNECT_API_KEY_P8" && exit 1)
+          test -n "$APP_STORE_CONNECT_API_KEY_P8$APP_STORE_CONNECT_API_KEY_P8_BASE64" || (echo "Missing APP_STORE_CONNECT_API_KEY_P8 or APP_STORE_CONNECT_API_KEY_P8_BASE64" && exit 1)
           test -n "$APPLE_TEAM_ID" || (echo "Missing APPLE_TEAM_ID" && exit 1)
           test -n "$APP_SUPPORT_URL" || (echo "Missing APP_SUPPORT_URL" && exit 1)
           test -n "$APP_MARKETING_URL" || (echo "Missing APP_MARKETING_URL" && exit 1)
