@@ -302,22 +302,28 @@ def draw_app_ui(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], scree
 
 def screenshot(path: Path, size: tuple[int, int], title: str, subtitle: str, screen: str, ipad: bool = False) -> None:
     width, height = size
-    img = Image.new("RGB", size, BG)
+    img = Image.new("RGB", size, (248, 250, 252))
     draw = ImageDraw.Draw(img)
 
-    draw.rectangle((0, 0, width, int(height * 0.36)), fill=(229, 241, 255))
-    draw_status_bar(draw, width, 44)
+    draw_status_bar(draw, width, 44 if not ipad else 36)
+    safe_top = 112 if not ipad else 92
+    side_margin = 64 if not ipad else 96
+    content_bottom = height - (152 if not ipad else 112)
+    draw_app_ui(draw, (side_margin, safe_top, width - side_margin, content_bottom), screen, ipad=ipad)
 
-    top = int(height * 0.10)
-    draw.text((80, top), title, font=font(74 if not ipad else 82, True), fill=TEXT)
-    multiline(draw, (80, top + (180 if not ipad else 190)), subtitle, font(34 if not ipad else 38), MUTED, width - 160, 10)
-
-    if ipad:
-        draw_ipad_frame(img, 220, int(height * 0.34), width - 440, int(height * 0.58), screen)
+    if not ipad:
+        bar_y = height - 116
+        rounded(draw, (38, bar_y, width - 38, height - 34), 34, CARD)
+        tabs = [("Dashboard", BLUE), ("Vehicles", MUTED), ("Defects", MUTED), ("Reports", MUTED)]
+        tab_w = (width - 76) // len(tabs)
+        for i, (label, color) in enumerate(tabs):
+            x = 38 + i * tab_w
+            draw.ellipse((x + tab_w // 2 - 12, bar_y + 18, x + tab_w // 2 + 12, bar_y + 42), fill=color)
+            tw, _ = text_size(draw, label, font(18, True))
+            draw.text((x + (tab_w - tw) // 2, bar_y + 50), label, font=font(18, True), fill=color)
     else:
-        draw_phone_frame(img, int(width * 0.19), int(height * 0.36), int(width * 0.62), int(height * 0.58), screen)
+        draw.text((side_margin, height - 64), "FleetScan AI uses local data and mock AI suggestions for review.", font=font(22), fill=MUTED)
 
-    draw.text((80, height - 82), "AI suggestions are not legal, MOT, or mechanical certification.", font=font(22), fill=MUTED)
     path.parent.mkdir(parents=True, exist_ok=True)
     img.save(path)
 

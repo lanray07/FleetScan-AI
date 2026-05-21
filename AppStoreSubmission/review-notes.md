@@ -12,6 +12,7 @@ Important reviewer notes:
 - Unsafe vehicles should not be driven.
 - Critical defects should be checked by qualified professionals immediately.
 - The App Store description includes the Terms of Use link using the Apple Standard EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+- Screenshots have been revised to show FleetScan AI iOS and iPadOS app UI only, without non-iOS device imagery.
 
 Sign-in:
 
