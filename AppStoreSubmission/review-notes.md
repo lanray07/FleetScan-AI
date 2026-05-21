@@ -11,6 +11,7 @@ Important reviewer notes:
 - AI findings are suggestions only and must be reviewed by the user.
 - Unsafe vehicles should not be driven.
 - Critical defects should be checked by qualified professionals immediately.
+- The App Store description includes the Terms of Use link using the Apple Standard EULA: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 Sign-in:
 

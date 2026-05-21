@@ -20,11 +20,29 @@ def app_version
 end
 
 def build_number
+  explicit = ENV["APP_BUILD_NUMBER"].to_s.strip
+  return explicit unless explicit.empty?
+
   ENV["GITHUB_RUN_NUMBER"] || Time.now.utc.strftime("%Y%m%d%H%M")
 end
 
 def bool_env(name)
   ENV[name].to_s.downcase == "true"
+end
+
+def review_text_file(name)
+  path = File.expand_path("../fastlane/metadata/review_information/#{name}.txt", __dir__)
+  File.exist?(path) ? File.read(path).strip : ""
+end
+
+def app_review_information
+  {
+    first_name: review_text_file("first_name"),
+    last_name: review_text_file("last_name"),
+    phone_number: review_text_file("phone_number"),
+    email_address: review_text_file("email_address"),
+    notes: review_text_file("notes")
+  }
 end
 
 def asc_key_path
@@ -143,6 +161,8 @@ platform :ios do
 
   desc "Upload App Store metadata, screenshots, and app icon"
   lane :upload_metadata do
+    skip_screenshots = bool_env("SKIP_SCREENSHOTS")
+
     deliver(
       api_key: asc_api_key,
       app_identifier: app_identifier,
@@ -152,10 +172,10 @@ platform :ios do
       app_icon: "fastlane/metadata/app_icon.png",
       skip_binary_upload: true,
       skip_metadata: false,
-      skip_screenshots: false,
+      skip_screenshots: skip_screenshots,
       submit_for_review: false,
       force: true,
-      overwrite_screenshots: true,
+      overwrite_screenshots: !skip_screenshots,
       run_precheck_before_submit: false
     )
   end
@@ -233,6 +253,7 @@ platform :ios do
       submit_for_review: true,
       automatic_release: false,
       build_number: build_number,
+      app_review_information: app_review_information,
       run_precheck_before_submit: true,
       precheck_include_in_app_purchases: false,
       submission_information: {

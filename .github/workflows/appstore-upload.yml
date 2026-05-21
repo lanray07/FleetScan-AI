@@ -19,6 +19,14 @@ on:
         description: "Submit for App Review after owner confirmations are set"
         type: boolean
         default: false
+      upload_screenshots:
+        description: "Upload screenshots when uploading App Store metadata"
+        type: boolean
+        default: true
+      app_build_number:
+        description: "Existing App Store Connect build number to submit when skipping build upload"
+        type: string
+        default: ""
 
 jobs:
   appstore:
@@ -34,6 +42,8 @@ jobs:
       APP_MARKETING_URL: ${{ vars.APP_MARKETING_URL || secrets.APP_MARKETING_URL || 'https://github.com/lanray07/FleetScan-AI' }}
       APP_PRIVACY_URL: ${{ vars.APP_PRIVACY_URL || secrets.APP_PRIVACY_URL || 'https://github.com/lanray07/FleetScan-AI/blob/main/PRIVACY.md' }}
       APP_COPYRIGHT: ${{ vars.APP_COPYRIGHT || secrets.APP_COPYRIGHT || '2026 Olanrewaju Bankole' }}
+      APP_BUILD_NUMBER: ${{ inputs.app_build_number || vars.APP_BUILD_NUMBER || '' }}
+      SKIP_SCREENSHOTS: ${{ github.event_name == 'workflow_dispatch' && inputs.upload_screenshots == false }}
       APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
       APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
       APP_STORE_CONNECT_API_KEY_P8: ${{ secrets.APP_STORE_CONNECT_API_KEY_P8 }}

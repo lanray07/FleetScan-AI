@@ -54,6 +54,8 @@ Important safety notes:
 
 FleetScan AI does not provide a legal roadworthiness certificate, MOT certification, mechanical certification, or legal advice. Drivers and operators remain responsible for vehicle safety. Unsafe vehicles should not be driven. Critical defects should be checked by qualified professionals immediately.
 
+Terms of Use (Apple Standard EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
+
 Keywords:
 
 fleet,vehicle inspection,walkaround check,defect report,van check,truck check,courier,maintenance,MOT,PDF report
@@ -62,13 +64,13 @@ Support URL: `https://github.com/lanray07/FleetScan-AI/issues`
 
 Marketing URL: `https://github.com/lanray07/FleetScan-AI`
 
-Privacy Policy URL: `https://YOUR_DOMAIN.com/privacy`
+Privacy Policy URL: `https://github.com/lanray07/FleetScan-AI/blob/main/PRIVACY.md`
 
 ## Version Information
 
 Version: `1.0`
 
-Copyright: `© 2026 YOUR_COMPANY_NAME`
+Copyright: `© 2026 Olanrewaju Bankole`
 
 Release notes:
 

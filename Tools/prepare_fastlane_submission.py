@@ -33,8 +33,11 @@ def prepare_metadata() -> None:
     fields = json.loads(FIELDS_PATH.read_text(encoding="utf-8"))
     listing = fields["localization_en_GB"]
     version = fields["version"]
+    review = fields["review_information"]
     metadata_dir = FASTLANE / "metadata" / LOCALE
+    review_dir = FASTLANE / "metadata" / "review_information"
     metadata_dir.mkdir(parents=True, exist_ok=True)
+    review_dir.mkdir(parents=True, exist_ok=True)
 
     keywords = env(
         "APP_KEYWORDS",
@@ -51,6 +54,11 @@ def prepare_metadata() -> None:
     write(metadata_dir / "privacy_url.txt", required_url("APP_PRIVACY_URL", listing["privacy_policy_url"]))
     write(metadata_dir / "release_notes.txt", env("APP_RELEASE_NOTES", version["release_notes"]))
     write(FASTLANE / "metadata" / "copyright.txt", env("APP_COPYRIGHT", version["copyright"]))
+    write(review_dir / "first_name.txt", env("APP_REVIEW_FIRST_NAME", review["contact_first_name"]))
+    write(review_dir / "last_name.txt", env("APP_REVIEW_LAST_NAME", review["contact_last_name"]))
+    write(review_dir / "phone_number.txt", env("APP_REVIEW_PHONE", review["contact_phone"]))
+    write(review_dir / "email_address.txt", env("APP_REVIEW_EMAIL", review["contact_email"]))
+    write(review_dir / "notes.txt", env("APP_REVIEW_NOTES", review["notes"]))
 
     app_icon = ROOT / "AppStoreSubmission" / "Assets" / "AppStoreIcon-1024.png"
     if app_icon.exists():
