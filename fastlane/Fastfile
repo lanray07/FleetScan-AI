@@ -16,7 +16,7 @@ def app_identifier
 end
 
 def app_version
-  ENV.fetch("APP_VERSION", "1.0")
+  ENV.fetch("APP_VERSION", "1.0.1")
 end
 
 def build_number

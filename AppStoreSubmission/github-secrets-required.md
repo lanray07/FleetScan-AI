@@ -82,7 +82,7 @@ Default: `com.fleetscanai.app`
 
 `APP_VERSION`
 
-Default: `1.0`
+Default: `1.0.1`
 
 `APP_NAME`
 

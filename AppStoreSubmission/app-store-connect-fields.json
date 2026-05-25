@@ -20,9 +20,9 @@
     "privacy_policy_url": "https://github.com/lanray07/FleetScan-AI/blob/main/PRIVACY.md"
   },
   "version": {
-    "version_string": "1.0",
+    "version_string": "1.0.1",
     "copyright": "© 2026 Olanrewaju Bankole",
-    "release_notes": "FleetScan AI launches with daily vehicle checks, vehicle profiles, photo evidence, mock AI defect suggestions, defect management, maintenance reminders, fleet manager visibility, PDF inspection reports, and StoreKit subscription scaffolding."
+    "release_notes": "Updated App Store screenshots and product page presentation. No functional app changes."
   },
   "review_information": {
     "sign_in_required": false,

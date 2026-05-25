@@ -68,7 +68,7 @@ Privacy Policy URL: `https://github.com/lanray07/FleetScan-AI/blob/main/PRIVACY.
 
 ## Version Information
 
-Version: `1.0`
+Version: `1.0.1`
 
 Copyright: `© 2026 Olanrewaju Bankole`
 
